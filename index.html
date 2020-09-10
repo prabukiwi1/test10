@@ -8,8 +8,24 @@
             var xml=new XMLHttpRequest();
             xml.open('GET','staff.xml',false);
             xml.send();
-            var xmlData=xml.responseText;
-            document.write(xmlData);
+            var xmlData=xml.responseXML;
+            if(!xmlData)
+            {
+            xmlData=(new DOMPaser().).parseFromString(xml.responseText,'text/xml');
+            var faculty=xmlData.getElementByTagName("tns:Faculty");
+            var name=faculty[0].getElementByTagName("tns:name")[0].firstChild.data;
+            var age=faculty[0].getElementByTagName("tns:age")[0].firstChild.data;
+            var designation=faculty[0].getElementByTagName("tns:designation")[0].firstChild.data;
+            var department=faculty[0].getElementByTagName("tns:department")[0].firstChild.data;
+            var course=faculty[0].getElementByTagName("tns:course")[0].firstChild.data;
+            var salary=faculty[0].getElementByTagName("tns:salary")[0].firstChild.data;
+            document.write("Name="+name+"<br>");
+            document.write("Age="+age+"<br>");
+            document.write("Designation="+designation+"<br>");
+            document.write("Department="+department+"<br>");
+            document.write("Course="+course+"<br>");
+            document.write("Salary="+salary+"<br>");
+        }
             // body...
         }
         
