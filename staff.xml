@@ -6,7 +6,7 @@
     <tns:designation>AP</tns:designation>
     <tns:department>CSE</tns:department>
     <tns:course>MCA</tns:course>
-    <tns:salary>39000</tns:salary>
+    <tns:salary>100</tns:salary>
   </tns:Faculty>
    <tns:Faculty fid="F002">
     <tns:name>Hanna</tns:name>
