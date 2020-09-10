@@ -11,7 +11,7 @@
             var xmlData=xml.responseXML;
             if(!xmlData)
             {
-            xmlData=(new DOMPaser().).parseFromString(xml.responseText,'text/xml');
+            xmlData=(new DOMPaser()).parseFromString(xml.responseText,'text/xml');
             var faculty=xmlData.getElementByTagName("tns:Faculty");
             var name=faculty[0].getElementByTagName("tns:name")[0].firstChild.data;
             var age=faculty[0].getElementByTagName("tns:age")[0].firstChild.data;
