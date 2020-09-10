@@ -6,12 +6,12 @@
         function readXML()
          {
             var xml=new XMLHttpRequest();
-            xml.open('GET','staff.xml',true);
+            xml.open('GET','staff.xml',false);
             xml.send();
             var xmlData=xml.responseXML;
             if(!xmlData)
             {
-            xmlData=(new DOMPaser()).parseFromString(xml.responseText,'text/xml');
+            xmlData=(new DOMParser()).parseFromString(xml.responseText,'text/xml');
             var faculty=xmlData.getElementByTagName("tns:Faculty");
             var name=faculty[0].getElementByTagName("tns:name")[0].firstChild.data;
             var age=faculty[0].getElementByTagName("tns:age")[0].firstChild.data;
