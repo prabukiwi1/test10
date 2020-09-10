@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.example.org/test1" 
+xmlns:tns="http://www.example.org/test1" 
+elementFormDefault="qualified">
+<complexType name="UniversityType">
+<sequence>
+<element name="Faculty" type="tns:FacultyType" maxOccurs="3" minOccurs="1">
+</element>
+</sequence>
+</complexType>
+<complexType name="FacultyType">
+<sequence>
+<element name="name" type="string"></element>
+<element name="age" type="integer"></element>
+<element name="designation" type="string"></element>
+<element name="department" type="string"></element>
+<element name="course" type="string"></element>
+<element name="salary" type="tns:MySalary"></element>
+</sequence>
+<attribute name="fid" type="ID" use="required">
+</attribute>
+</complexType>
+<element name="globalFaculty" type="tns:UniversityType">
+</element>
+<simpleType name="MySalary">
+<restriction base="integer">
+<minExclusive value="30000"></minExclusive>
+<maxExclusive value="70000"></maxExclusive>
+</restriction>
+</simpleType>
+</schema>
