@@ -31,7 +31,7 @@ function loadDoc() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>tns:name</th><th>Title</th></tr>";
+  var table="<tr><th>tns:name</th><th>tns:designation</th></tr>";
   var x = xmlDoc.getElementsByTagName("tns:faculty");
   for (i = 0; i <x.length; i++) { 
     table += "<tr><td>" +
