@@ -31,13 +31,13 @@ function loadDoc() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>tns:name</th><th>tns:designation</th></tr>";
-  var x = xmlDoc.getElementsByTagName("tns:faculty");
+  var table="<tr><th>name</th><th>designation</th></tr>";
+  var x = xmlDoc.getElementsByTagName("faculty");
   for (i = 0; i <x.length; i++) { 
     table += "<tr><td>" +
-    x[i].getElementsByTagName("tns:name")[0].childNodes[0].nodeValue +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
     "</td><td>" +
-    x[i].getElementsByTagName("tns:designation")[0].childNodes[0].nodeValue +
+    x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue +
     "</td></tr>";
   }
   document.getElementById("demo").innerHTML = table;
