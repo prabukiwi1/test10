@@ -3,17 +3,11 @@
   <faculty>
     <name>rrr</name>
     <designation>al</designation>
+    <salary>1000</salary>
   </faculty>
   <faculty>
-    <name>prabu</name>
-    <designation>pro</designation>
-  </faculty>
-  <faculty>
-    <name>ttt</name>
-    <designation>pa</designation>
-  </faculty>
-  <faculty>
-    <name>yyy</name>
-    <designation>ap</designation>
+    <name>PPP</name>
+    <designation>al</designation>
+    <salary>1000</salary>
   </faculty>
 </University>
