@@ -41,9 +41,12 @@ function XmlContent(xml)
   for(i=0;i<x.length;i++)
 {
   table+="<tr><td>"+
-  x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+"</td><td>"+
-  x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue+"</td><td>"+
-  x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue+"</td></tr>";
+  x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+
+  "</td><td>"+
+  x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue+
+  "</td><td>"+
+  x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue+
+  "</td></tr>";
 }
 document.getElementById("test").innerHTML=table;
 }
