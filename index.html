@@ -6,7 +6,7 @@
     function readXML()
     {
       var xml1=new XMLHttpRequest();
-      xml1.open("GET",staff.xml,false);
+      xml1.open('GET','staff.xml',false);
       xml1.send();
       var xmlData=xml1.responseText;
       document.write(xmlData);
