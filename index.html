@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <style type="text/css">
+  <style>
   table,th,td
   {
     border: 1 px solid black;
@@ -12,10 +12,11 @@
 </style>
 
 <body>
-<h1>Faculty Information System CHRIST UNIVERSITY--</h1>
-<button type="button" onclick="ReadXML()">Faculty Details</button>
+<h1>Faculty Information System CHRIST UNIVERSITY</h1>
+<button type="button" onclick="ReadXML()">Faculty Details
+</button>
 <br><br>
-<table id="test"></table>
+<table id="demo"></table>
 <script type="text/javascript">
   function ReadXML()
   {
@@ -45,7 +46,7 @@ function XmlContent(xml)
     x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
     "</td></tr>";
 }
-document.getElementById("test").innerHTML=table;
+document.getElementById("demo").innerHTML=table;
 }
 </script>
 </body>
