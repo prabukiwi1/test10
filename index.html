@@ -3,29 +3,39 @@
 <head>
   <title>XML Read</title>
   <script type="text/javascript">
-    function readXML()
-    {
-      var xml1=new XMLHttpRequest();
-      xml1.open('GET','staff.xml',true);
-      xml1.send();
-      var xmlData=xml1.responseXML;
-      if(!xmlData)
-      {
-        xmlData=(new DOMParser()).parseFromString(xml1.responseText,'text/xml');
-        var faculty=xmlData.getElementsByTagName("faculty");
-        //var name=faculty[0].getElementsByTagName("name")[0].firstChild.data;
-        var designation=faculty[0].getElementsByTagName("designation")[0].firstChild.data;
-        var salary=faculty[0].getElementsByTagName("salary")[0].firstChild.data;
-        //document.write("Name:"+name+"<br/>");
-        document.write("Designation:"+designation+"<br/>");
-        document.write("Salary:"+salary+"<br/>");
-
-      }
-    }
-  </script>
+    <script language="JavaScript">
+  // Create a connection to the file.
+  var Connect = new XMLHttpRequest();
+  // Define which file to open and
+  // send the request.
+  Connect.open("GET", "staff.xml", false);
+  Connect.setRequestHeader("Content-Type", "text/xml");
+  Connect.send(null);
+  // Place the response in an XML document.
+  var TheDocument = Connect.responseXML;
+  // Place the root node in an element.
+  var Customers = TheDocument.childNodes[0];
+  // Retrieve each customer in turn.
+  for (var i = 0; i < Customers.children.length; i++)
+  {
+   var Customer = Customers.children[i];
+   // Access each of the data values.
+   var name = Customer.getElementsByTagName("name");
+   var designation = Customer.getElementsByTagName("designation");
+   var salary = Customer.getElementsByTagName(
+     "salary");
+   // Write the data to the page.
+   document.write("<tr><td>");
+   document.write(name[0].textContent.toString());
+   document.write("</td><td>");
+   document.write(designation[0].textContent.toString());
+   document.write("</td><td>");
+   document.write(salary[0].textContent.toString());
+   document.write("</td></tr>");
+  }
+</script>
 </head>
 <body>
-<h1>XML File</h1>
-<button onclick="readXML()">Read XML File</button>
+  <p>Reading XML Contents</p>
 </body>
 </html>
