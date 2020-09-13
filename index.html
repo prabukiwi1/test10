@@ -6,10 +6,21 @@
     function readXML()
     {
       var xml1=new XMLHttpRequest();
-      xml1.open('GET','staff.xml',false);
+      xml1.open('GET','staff.xml',true);
       xml1.send();
-      var xmlData=xml1.responseText;
-      document.write(xmlData);
+      var xmlData=xml1.responseXML;
+      if(!xmlData)
+      {
+        xmlData=(new DOMParser()).parseFromString(xml1.responseText,'text/xml');
+        var fac=xmlData.getElementsByTagName("faculty");
+        var name=fac[0].getElementsByTagName("name")[0].firstChild.data;
+        var designation=fac[0].getElementsByTagName("designation")[0].firstChild.data;
+        var salary=fac[0].getElementsByTagName("salary")[0].firstChild.data;
+        document.write("Name:"+name+"<br/>");
+        document.write("Designation:"+designation+"<br/>");
+        document.write("Salary:"+salary+"<br/>");
+
+      }
     }
   </script>
 </head>
