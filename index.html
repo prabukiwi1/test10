@@ -1,53 +1,49 @@
-<!DOCTYPE html>
 <html>
-  <style>
-  table,th,td
-  {
-    border: 1px solid black;
-  }
-  th,td
-  {
-    padding: 5px;
-  }
-</style>
-
-<body>
-<h1>Faculty Information System</h1>
-<button type="button" onclick="ReadXML()">Faculty Details
-</button>
-<br><br>
-<table id="demo"></table>
-<script>
-  function ReadXML()
-  {
-  var xml1=new XMLHttpRequest();
-  xml1.onreadystatechange=function()
-  {
-    if(this.readyState==4 && this.status==200)
-    {
-      XmlContent(this);
-    }
-  };
-  xml1.open("GET","staff.xml",true);
-  xml1.send();
-}
-function XmlContent(xml)
-{
-  var i;
-  var xmlDoc = xml.responseXML;
-  var table="<tr><th>NAME</th><th>DESIGNATION</th><th>SALARY</th></tr>";
-  var x = xmlDoc.getElementsByTagName("faculty");
-  for (i = 0; i <x.length; i++) { 
-    table += "<tr><td>" +
-    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-}
-document.getElementById("demo").innerHTML=table;
-}
-</script>
-</body>
+    <style>
+        table,th,td{
+            border: 1px solid red;
+        }
+        th,td{
+            padding: 5px;
+        }
+    </style>
+    <body>
+        <h1>Reading XML Content CHRIST</h1>
+        <button type="button" onclick="ReadXML()">Faculty Details</button>
+        <br><br>
+        <table id="test"></table>
+        <script>
+            function ReadXML()
+            {
+                var xml1=new XMLHttpRequest();
+                xml1.onreadystatechange=function()
+                {
+                    if(this.readyState==4 && this.status==200)
+                    {
+                        xmlContent(this);
+                    }
+                };
+                xml1.open("GET","staff.xml",true);
+                xml1.send();
+            }
+            function xmlContent(xml)
+            {
+                var i;
+                var xmlDoc=xml.responseXML;
+                var table="<tr><th>NAME</th><th>DESIGNATION</th><th>SALARY</th></tr>";
+                var x=xmlDoc.getElementsByTagName("faculty");
+                for(i=0;i<x.length;i++)
+                {
+                    table+="<tr><td"+
+                    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+
+                    "</td><td>"+
+                        x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue+
+                    "</td><td>"+
+                        x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue+
+                    "</td></tr>";
+                }
+                document.getElementById("test").innerHTML=table;
+            }
+        </script>
+    </body>
 </html>
