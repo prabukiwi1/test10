@@ -14,7 +14,7 @@
   }
 </style>
 <body>
-<h1>Faculty Information System CHRIST UNIVERSITYY</h1>
+<h1>Faculty Information System CHRIST UNIVER</h1>
 <button type="button" onclick="ReadXML()">Faculty Details</button>
 <br><br>
 <table id="test"></table>
@@ -35,18 +35,17 @@
 function XmlContent(xml)
 {
   var i;
-  var xmlDoc=xml.responseXML;
+  var xmlDoc = xml.responseXML;
   var table="<tr><th>NAME</th><th>DESIGNATION</th><th>SALARY</th></tr>";
-  var x=xmlDoc.getElementsByTagName("faculty");
-  for(i=0;i<x.length;i++)
-{
-  table +="<tr><td>"+
-  x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue+
-  "</td><td>"+
-  x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue+
-  "</td><td>"+
-  x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue+
-  "</td></tr>";
+  var x = xmlDoc.getElementsByTagName("faculty");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
+    "</td></tr>";
 }
 document.getElementById("test").innerHTML=table;
 }
