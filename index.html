@@ -1,40 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>XML Reads</title>
-  <script type="text/javascript">
-  // Create a connection to the file.
-  var Connect = new XMLHttpRequest();
-  // Define which file to open and
-  // send the request.
-  Connect.open("GET", "staff.xml", false);
-  Connect.setRequestHeader("Content-Type", "text/xml");
-  Connect.send(null);
-  // Place the response in an XML document.
-  var TheDocument = Connect.responseXML;
-  // Place the root node in an element.
-  var Customers = TheDocument.childNodes[0];
-  // Retrieve each customer in turn.
-  for (var i = 0; i < Customers.children.length; i++)
-  {
-   var Customer = Customers.children[i];
-   // Access each of the data values.
-   var name = Customer.getElementsByTagName("name");
-   var designation = Customer.getElementsByTagName("designation");
-   var salary = Customer.getElementsByTagName(
-     "salary");
-   // Write the data to the page.
-   document.write("<tr><td>");
-   document.write(name[0].textContent);
-   document.write("</td><td>");
-   document.write(designation[0].textContent);
-   document.write("</td><td>");
-   document.write(salary[0].textContent);
-   document.write("</td></tr>");
-  }
-</script>
-</head>
+<style>
+table,th,td {
+  border : 1px solid black;
+}
+th,td {
+  padding: 5px;
+}
+</style>
 <body>
-  <p>Reading XML Contents</p>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Faculty Details
+</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "staff.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>NAME</th><th>DESIGNATION</th><th>SALARY</th></tr>";
+  var x = xmlDoc.getElementsByTagName("faculty");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
 </body>
 </html>
