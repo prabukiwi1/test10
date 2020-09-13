@@ -1,45 +1,20 @@
 <!DOCTYPE html>
 <html>
-<style>
-table,th,td {
-  border : 1px solid black;
-}
-</style>
-<body>
-
-<h1>The XMLHttpRequest Object</h1>
-
-<button type="button" onclick="loadDoc()">Faculty Details xml</button>
-<br><br>
-<table id="demo"></table>
-
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
+<head>
+  <title>XML Read</title>
+  <script type="text/javascript">
+    function readXML()
+    {
+      var xml1=new XMLHttpRequest();
+      xml1.open("GET",staff.xml,false);
+      xml1.send();
+      var xmlData=xml1.responseText;
+      document.write(xmlData);
     }
-  };
-  xhttp.open("GET", "staff.xml", true);
-  xhttp.send();
-}
-function myFunction(xml) {
-  var i;
-  var xmlDoc = xml.responseXML;
-  var table="<tr><th>NAME</th><th>DESIGNATION</th><th>SALARY</th></tr>";
-  var x = xmlDoc.getElementsByTagName("faculty");
-  for (i = 0; i <x.length; i++) { 
-    table += "<tr><td>" +
-    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue +"</td><td>" +
-    x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-  }
-  document.getElementById("demo").innerHTML = table;
-}
-</script>
-
+  </script>
+</head>
+<body>
+<h1>XML File</h1>
+<button onclick="readXML()">Read XML File</button>
 </body>
 </html>
