@@ -11,7 +11,7 @@
   }
 </style>  
 <body>
-  <h1>***Employee Details**%%</h1>
+  <h1>Employee Details</h1>
   <button type="button" onclick="loadDoc()">Get the Employee Details</button>
   <br><br>
   <table id="test"></table>
@@ -37,6 +37,7 @@
       var x=xmlDoc.getElementsByTagName("employee");
       for(i=0;i<x.length;i++)
       {
+        table+="<tr><td>"+
         x[i].getElementsByTagName("ename")[0].childNodes[0].nodeValue+
         "</td><td>"+
         x[i].getElementsByTagName("eage")[0].childNodes[0].nodeValue+
