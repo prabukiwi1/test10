@@ -34,7 +34,7 @@
       var i;
       var xmlDoc=xml.responseXML;
       var table="<tr><th>ENAME</th><th>EAGE</th></tr>";
-      var x=xmlDoc.getElementsByTagName("employe");
+      var x=xmlDoc.getElementsByTagName("employee");
       for(i=0;i<x.length;i++)
       {
         x[i].getElementsByTagName("ename")[0].childNodes[0].nodeValue+
