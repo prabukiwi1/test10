@@ -1,48 +1,54 @@
 <!DOCTYPE html>
 <html>
 <style>
-table,th,td {
-  border : 1px solid black;
-  border-collapse: collapse;
-}
-th,td {
-  padding: 5px;
-}
+  table,th,tr
+  {
+    border:1px solid red;
+  }
+  th,td
+  {
+    padding: 5px;
+  }
 </style>
 <body>
-
-<h1>The XMLHttpRequest Object$$</h1>
-
-<button type="button" onclick="loadDoc()">Get my CD collection</button>
-<br><br>
-<table id="demo"></table>
-
-<script>
-function loadDoc() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
+  <h1>Employee Details!!!</h1>
+  <button type="button" onclick="loadDoc()">Get the Employee Details</button>
+  <br><br>
+  <table id="test"></table>
+  <script type="text/javascript">
+    function loadDoc()
+    {
+      var xhttp=new XMLHttpRequest();
+      xhttp.onreadystatechange=function()
+      {
+        if(this.readyState==4&&this.status==200)
+        {
+          myFunction(this);
+        }
+      };
+      xhttp.open("GET","staff.xml",true);
+      xhttp.send();
     }
-  };
-  xhttp.open("GET", "staff.xml", true);
-  xhttp.send();
-}
-function myFunction(xml) {
-  var i;
-  var xmlDoc = xml.responseXML;
-  var table="<tr><th>Ename</th><th>Eage</th></tr>";
-  var x = xmlDoc.getElementsByTagName("employee");
-  for (i = 0; i <x.length; i++) { 
-    table += "<tr><td>" +
-    x[i].getElementsByTagName("ename")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("eage")[0].childNodes[0].nodeValue +
-    "</td></tr>";
-  }
-  document.getElementById("demo").innerHTML = table;
-}
-</script>
-
+    function myFunction(xml)
+    {
+      var i;
+      var xmlDoc=xml.responseXML;
+      var table="<tr><th>ENAME</th><th>EAGE</th></tr>";
+      var x=xmlDoc.getElemntsByTagName("employe");
+      for(i=0;i<x.length;i++)
+      {
+        x[i].getElemntsByTagName("ename")[0].childNodes[0].nodeValue+
+        "</td><td>"+
+        x[i].getElemntsByTagName("eage")[0].childNodes[0].nodeValue+
+        "</td></tr>";
+      }
+      document.getElementById("test").innerHTML=table;
+    }
+  </script>
 </body>
 </html>
+      }
+    }
+    }
+
+  </script>
