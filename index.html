@@ -11,7 +11,7 @@ th,td {
 </style>
 <body>
 
-<h1>The XMLHttpRequest Objectsssss</h1>
+<h1>The XMLHttpRequest Objectxxxx</h1>
 
 <button type="button" onclick="loadDoc()">Faculty details</button>
 <br><br>
@@ -35,9 +35,9 @@ function myFunction(xml) {
   var x = xmlDoc.getElementsByTagName("faculty");
   for (i = 0; i <x.length; i++) { 
     table += "<tr><td>" +
-    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
-    "</td><td>" +
     x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
     "</td></tr>";
   }
   document.getElementById("demo").innerHTML = table;
