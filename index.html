@@ -3,6 +3,7 @@
 <style>
 table,th,td {
   border : 1px solid black;
+  border-collapse: collapse;
 }
 th,td {
   padding: 5px;
@@ -10,9 +11,9 @@ th,td {
 </style>
 <body>
 
-<h1>The XMLHttpRequest Objectssss</h1>
+<h1>The XMLHttpRequest Objectiii</h1>
 
-<button type="button" onclick="loadDoc()">Get my CD collection</button>
+<button type="button" onclick="loadDoc()">Faculty details</button>
 <br><br>
 <table id="demo"></table>
 
@@ -30,7 +31,7 @@ function loadDoc() {
 function myFunction(xml) {
   var i;
   var xmlDoc = xml.responseXML;
-  var table="<tr><th>NAME</th><th>DESINATION</th></tr>";
+  var table="<tr><th>NAME</th><th>DESIGNATION</th></tr>";
   var x = xmlDoc.getElementsByTagName("faculty");
   for (i = 0; i <x.length; i++) { 
     table += "<tr><td>" +
