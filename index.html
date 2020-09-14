@@ -11,7 +11,7 @@
   }
 </style>
 <body>
-  <h1>Employee Details!!!</h1>
+  <h1>***Employee Details***</h1>
   <button type="button" onclick="loadDoc()">Get the Employee Details</button>
   <br><br>
   <table id="test"></table>
@@ -34,12 +34,12 @@
       var i;
       var xmlDoc=xml.responseXML;
       var table="<tr><th>ENAME</th><th>EAGE</th></tr>";
-      var x=xmlDoc.getElemntsByTagName("employe");
+      var x=xmlDoc.getElementsByTagName("employe");
       for(i=0;i<x.length;i++)
       {
-        x[i].getElemntsByTagName("ename")[0].childNodes[0].nodeValue+
+        x[i].getElementsByTagName("ename")[0].childNodes[0].nodeValue+
         "</td><td>"+
-        x[i].getElemntsByTagName("eage")[0].childNodes[0].nodeValue+
+        x[i].getElementsByTagName("eage")[0].childNodes[0].nodeValue+
         "</td></tr>";
       }
       document.getElementById("test").innerHTML=table;
