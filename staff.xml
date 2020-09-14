@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <University>
-  <faculty>
-    <name>rrr</name>
-    <designation>al</designation>
-    <salary>1000</salary>
-  </faculty>
-  <faculty>
-    <name>PPP</name>
-    <designation>al</designation>
-    <salary>1000</salary>
-  </faculty>
+<faculty>
+<designation>AP</designation>
+<salary>45000</salary>
+</faculty>
+<faculty>
+<name>Meena</name>
+<designation>123</designation>
+<salary>90000</salary>
+</faculty>
+<faculty>
+<name>Rithul</name>
+<designation>AP</designation>
+<salary>45000</salary>
+</faculty>
 </University>
