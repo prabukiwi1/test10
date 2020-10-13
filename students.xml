@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet type="text/xsl" href="Rule.xsl"?>
+ <students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="Students.xsd"> 
+  <student> 
+   <name> Ramesh Ahuja </name> 
+   <course> BCA </course> 
+   <regno> 200301 </regno> 
+   <book_title> Programming in C </book_title>
+   <book_author> Lokesh C </book_author>
+   <borrow_date> 2020-08-20 </borrow_date>
+   <return_date> 2020-08-27 </return_date>
+  </student> 
+  <student> 
+   <name> Sailesh Kumar </name>
+   <course> MCS </course> 
+   <regno> 200402 </regno> 
+   <book_title> Web Development </book_title>
+   <book_author> Simon A </book_author>
+   <borrow_date> 2020-09-18 </borrow_date>
+   <return_date> 2020-09-25 </return_date>
+  </student> 
+  <student>  
+   <name> Meena Agarwal </name> 
+   <course> MCA </course> 
+   <regno> 200142 </regno> 
+   <book_title> Python Programming </book_title>
+   <book_author> Chaman C </book_author>
+   <borrow_date> 2020-09-10 </borrow_date>
+   <return_date> 2020-09-17 </return_date>
+  </student> 
+  <student>  
+   <name> Kiran Singh </name> 
+   <course> BCom </course> 
+   <regno> 200656 </regno> 
+   <book_title> Fundamentals of Accounting </book_title>
+   <book_author> Hema S </book_author>
+   <borrow_date> 2020-08-05 </borrow_date>
+   <return_date> 2020-08-12 </return_date> 
+  </student> 
+  <student>  
+   <name> Binod Lal </name> 
+   <course> MDS </course> 
+   <regno> 200720 </regno> 
+   <book_title> Research Terminology </book_title>
+   <book_author> Renu G </book_author>
+   <borrow_date> 2020-09-23 </borrow_date>
+   <return_date> 2020-09-30 </return_date>
+  </student> 
+ </students> 
