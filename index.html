@@ -1,9 +1,50 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>XML</title>
-</head>
+<style>
+table,th,td {
+  border : 1px solid black;
+}
+th,td {
+  padding: 5px;
+}
+</style>
 <body>
-<a href="Students.xml"></a>
+
+<h1>The XMLHttpRequest Object</h1>
+
+<button type="button" onclick="loadDoc()">Faculty Details
+</button>
+<br><br>
+<table id="demo"></table>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      myFunction(this);
+    }
+  };
+  xhttp.open("GET", "Students.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>NAME</th><th>DESIGNATION</th><th>SALARY</th></tr>";
+  var x = xmlDoc.getElementsByTagName("Employee");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("designation")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("salary")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+</script>
+
 </body>
 </html>
